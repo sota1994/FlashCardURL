@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlashcardURL.AddPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="ADD NEW FLASHCARD" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold"/>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Enter Name: " WidthRequest="100"/>
+                <Entry x:Name="txtName" WidthRequest="300" Placeholder="Your flashcard name..."/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Enter Tags: " WidthRequest="100"/>
+                <Entry x:Name="txtTags" WidthRequest="300" Placeholder="Enter tags, seperate by 'space' ... "/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Enter URL: " WidthRequest="100"/>
+                <Entry x:Name="txtURL" WidthRequest="300" Placeholder="https://www.example.com"/>
+            </StackLayout>
+            <Button x:Name="btnPreview" Clicked="BtnPreview_Clicked" Text="Preview" HorizontalOptions="Center"/>
+            <WebView x:Name="webView" HeightRequest="400"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnOK" Clicked="BtnOK_Clicked" Text="OK" HorizontalOptions="CenterAndExpand"/>
+                <Button x:Name="btnCancel" Clicked="BtnCancel_Clicked" Text="Cancel" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

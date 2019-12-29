@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlashcardURL.AddSavedListPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="ADD NEW QUICKLIST"
+                
+                HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="txtName" Placeholder="Enter name here ..."/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="btnOK" Text="OK" Clicked="BtnOK_Clicked"/>
+                <Button x:Name="btnCancel" Text="Cancel" Clicked="BtnCancel_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

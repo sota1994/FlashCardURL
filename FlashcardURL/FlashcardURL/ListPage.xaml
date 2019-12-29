@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlashcardURL.ListPage">
+    <ContentPage.Content Margin="0,50,0,0">
+        <StackLayout Orientation="Vertical">
+            <SearchBar x:Name="searchFlashCard" Placeholder="Enter tags..." SearchButtonPressed="SearchFlashCard_SearchButtonPressed" Margin="0,0,0,20"  />
+            <Label Text="QuickList:" HeightRequest="50" WidthRequest="200" FontSize="Large"/>
+            <ListView x:Name="listView" Margin="20" ItemSelected="ListView_ItemSelected" HeightRequest="200" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="20,0,0,0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" FontSize="Medium">
+                                    
+                                </Label>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Margin="0,0,20,0">
+                                    <Label x:Name="txtEdit" Text="Edit" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer CommandParameter="{Binding ID}" Tapped="TapGestureRecognizer_Tapped"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label x:Name="txtDelete" Text="Del" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer CommandParameter="{Binding ID}" Tapped="TapGestureRecognizer_Tapped_1"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+                
+            </ListView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Add New FlashCard" Clicked="Button_Clicked" HorizontalOptions="Center"/>
+                <Button Text="Show All FlashCards" Clicked="Button_Clicked_1" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

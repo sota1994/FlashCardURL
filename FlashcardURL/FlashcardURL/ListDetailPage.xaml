@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlashcardURL.ListDetailPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <SearchBar x:Name="searchBar" TextChanged="SearchBar_TextChanged" Placeholder="Search flashcard(s) by name..."/>
+            <ListView x:Name="listView" Margin="20" ItemSelected="ListView_ItemSelected" HeightRequest="200" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="20,0,0,0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" FontSize="Medium">
+
+                                </Label>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Margin="0,0,20,0">
+                                    <Label x:Name="txtEdit" Text="Edit" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer CommandParameter="{Binding ID}" Tapped="TapGestureRecognizer_Tapped"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label x:Name="txtDelete" Text="Del" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer CommandParameter="{Binding ID}" Tapped="TapGestureRecognizer_Tapped_1"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+             </ListView>
+            <Button x:Name="btnAdd" Clicked="BtnAdd_Clicked" Text="Add to quicklist"  HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
